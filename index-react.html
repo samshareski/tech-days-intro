@@ -8,12 +8,26 @@
 </head>
 
 <body>
-
+  <div id="root"></div>
 
   <script src="https://unpkg.com/react/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
   <script type="text/babel">
+    class Counter extends React.Component {
+      render() {
+        return ( 
+          <div className='container'>
+            <div className='count'>0</div>
+            <button className='btn btn-primary'>Increment</button>
+            <button className='btn btn-secondary'>Reset</button>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Counter />, document.getElementById('root'))
   </script>
 </body>
 
