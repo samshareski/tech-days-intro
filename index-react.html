@@ -16,16 +16,42 @@
 
   <script type="text/babel">
     class Counter extends React.Component {
+      constructor(props) {
+        super(props)
+
+        this.state = {count: 0}
+      }
+
+      increment = () => {
+        this.setState(prevState => ({
+          count: prevState.count + 1
+        }))
+      }
+
+      reset = () => {
+        this.setState({
+          count: 0
+        })
+      }
+
       render() {
-        return ( 
+        return (
           <div className='container'>
-            <div className='count'>0</div>
-            <button className='btn btn-primary'>Increment</button>
-            <button className='btn btn-secondary'>Reset</button>
+            <CounterDisplay count={this.state.count} />
+            <Button type='primary' clickHandler={this.increment}>Increment</Button>
+            <Button type='secondary' clickHandler={this.reset}>Reset</Button>
           </div>
         )
       }
     }
+
+    const CounterDisplay = ({count}) => (
+      <div className='count'>{count}</div>
+    )
+
+    const Button = ({children, type, clickHandler}) => (
+      <button className={'btn btn-' + type} onClick={clickHandler}>{children}</button>
+    )
 
     ReactDOM.render(<Counter />, document.getElementById('root'))
   </script>
