@@ -16,6 +16,28 @@
   </div>
 
   <script>
+    const countDisplay = document.querySelector('.count')
+    const incrementButton = document.querySelector('.btn-primary')
+    const resetButton = document.querySelector('.btn-secondary')
+
+    let count = 0
+
+    function increment() {
+      count++
+      renderCount()
+    }
+
+    function reset() {
+      count = 0
+      renderCount()
+    }
+
+    function renderCount() {
+      countDisplay.textContent = count;
+    }
+
+    incrementButton.addEventListener('click', increment)
+    resetButton.addEventListener('click', reset)
   </script>
 </body>
 
