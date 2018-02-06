@@ -1,0 +1,40 @@
+body {
+  margin: 250px 500px;
+}
+
+.container {
+  margin: auto;
+  height: 200px;
+  width: 400px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 4fr 3fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'count primary'
+    'count secondary';
+}
+
+.count {
+  font: bold 7em 'courier';
+  grid-area: count;
+}
+
+.btn {
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 110%;
+  height: 45%;
+  width: 75%;
+}
+
+.btn-primary {
+  background: lightblue;
+  grid-area: primary;
+}
+
+.btn-secondary {
+  background: lightblue;
+  grid-area: secondary;
+}
